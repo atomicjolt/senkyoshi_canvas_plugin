@@ -1,0 +1,21 @@
+<%= fields_for :settings, OpenObject.new(settings) do |f| %>
+  <table style="width: 500px;" class="formtable">
+    <tr>
+      <td colspan="2">
+        <%= mt :description, "You will need access to a [Scorm Player](%{url}) service if you want to also convert courses with scorm content.", url: "https://github.com/atomicjolt/adhesion" %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.blabel :scorm_url, en: "Scorm URL" %></td>
+      <td><%= f.text_field :scorm_url %></td>
+    </tr>
+    <tr>
+      <td><%= f.blabel :scorm_launch_url, en: "Scorm Launch URL" %></td>
+      <td><%= f.text_field :scorm_launch_url %></td>
+    </tr>
+    <tr>
+      <td><%= f.blabel :scorm_shared_auth, en: "Scorm Shared Auth" %></td>
+      <td><%= f.text_field :scorm_shared_auth %></td>
+    </tr>
+  </table>
+<% end %>

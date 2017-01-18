@@ -1,0 +1,17 @@
+.DS_Store
+**.orig
+/.bundle/
+/.yardoc
+/_yardoc/
+/Gemfile.lock
+/log
+/tmp
+/spec/tmp
+/spec/reports/
+/coverage/
+/pkg/
+/doc/
+.byebug_history
+.tag*
+*.gem
+.idea/
