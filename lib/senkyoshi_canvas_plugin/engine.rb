@@ -4,8 +4,6 @@ module SenkyoshiCanvasPlugin
   DESCRIPTION =
     "This enables importing Blackboard Cartridges into Canvas.".freeze
   class Engine < ::Rails::Engine
-    isolate_namespace SenkyoshiCanvasPlugin
-
     config.autoload_paths << File.expand_path(File.join(__FILE__, "../.."))
 
     config.to_prepare do
@@ -32,6 +30,7 @@ module SenkyoshiCanvasPlugin
           valid_contexts: %w{Account Course},
         },
       )
+      require "senkyoshi_canvas_plugin/senkyoshi_migration"
     end
   end
 end

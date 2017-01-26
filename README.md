@@ -11,39 +11,9 @@ Add a file inside the `Gemfile.d` folder
 gem "canvas_cc", git: "https://github.com/atomicjolt/canvas_cc.git"
 ```
 
-#### Rubygems
-Add to Gemfile.d/senkyoshi.rb
-```ruby
-gem "senkyoshi_canvas_plugin"
-```
-
-#### Manual
 ```sh
 sysadmin@appserver:~$ cd /path/to/canvas/gems/plugins
 sysadmin@appserver:/path/to/canvas/gems/plugins$ git clone https://github.com/atomicjolt/senkyoshi_canvas_plugin.git
-```
----
-Now you need to add a couple lines of code to a coffeescript file.
-Near the bottom, just above the `registerExternalTool` method add:
-```coffeescript
-  # app/coffeescripts/bundles/modules/content_migration_setup.coffee
-
-  ConverterViewControl.register
-    key: 'senkyoshi_importer'
-    view: new CanvasExportView
-      chooseMigrationFile: new ChooseMigrationFileView
-        model: ConverterViewControl.getModel()
-        fileSizeLimit: ENV.UPLOAD_LIMIT
-
-      selectContent: new SelectContentCheckboxView
-        model: ConverterViewControl.getModel()
-
-      dateShift: new DateShiftView
-        model: ConverterViewControl.getModel()
-        collection: daySubCollection
-        daySubstitution: daySubCollectionView
-        oldStartDate: ENV.OLD_START_DATE
-        oldEndDate: ENV.OLD_END_DATE
 ```
 
 Now `bundle install` and `bundle exec rake canvas:compile_assets` and `rails server`.
