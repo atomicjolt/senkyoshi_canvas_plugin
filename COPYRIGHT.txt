@@ -1,0 +1,3 @@
+The following files contain code copyright Instructure and licensed under the AGPL-3.0:
+
+app/coffeescripts/content_migration_setup_senkyoshi.coffee
