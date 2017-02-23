@@ -27,11 +27,11 @@ define [
   daySubCollectionTemplate
 ) ->
 
-  noDaySubstitutions = "No Day Substitutions Added"
+  emptyMessage = I18n.t('no_day_substitutions', "No Day Substitutions Added")
   daySubCollection = new DaySubstitutionCollection
   daySubCollectionView = new CollectionView
     collection: daySubCollection
-    emptyMessage: -> I18n.t('no_day_substitutions', noDaySubstitutions)
+    emptyMessage: -> emptyMessage
     itemView: DaySubView
     template: daySubCollectionTemplate
 
