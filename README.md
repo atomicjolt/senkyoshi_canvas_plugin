@@ -1,6 +1,6 @@
 # Senkyoshi Canvas Plugin
 
-This plugin enables the use of the Senkyoshi converter inside of Canvas. It adds a blackboard cartridge option to the import content dropdown for a course.
+This plugin enables the use of the [Senkyoshi](https://github.com/atomicjolt/senkyoshi) converter inside of Canvas. It adds a blackboard cartridge option to the import content dropdown for a course.
 
 ## Installation
 

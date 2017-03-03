@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 3.2", "< 5.1"
   spec.add_dependency "canvas_cc"
-  spec.add_dependency "senkyoshi"
+  spec.add_dependency "senkyoshi", "1.0.8"
 end
