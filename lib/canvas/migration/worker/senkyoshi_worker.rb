@@ -157,7 +157,10 @@ module Canvas
             Senkyoshi.configure do |config|
               config.scorm_url = plugin.settings[:scorm_url]
               config.scorm_launch_url = plugin.settings[:scorm_launch_url]
+              config.scorm_shared_id = plugin.settings[:scorm_shared_id]
               config.scorm_shared_auth = plugin.settings[:scorm_shared_auth]
+              config.scorm_oauth_consumer_key =
+                plugin.settings[:scorm_oauth_consumer_key]
             end
 
             meta = {

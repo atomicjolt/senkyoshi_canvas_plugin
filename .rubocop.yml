@@ -2,7 +2,7 @@ AllCops:
   Exclude:
     - db/schema.rb
 
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Description: Check the naming of accessor methods for get_/set_.
   Enabled: false
 
@@ -21,7 +21,7 @@ Style/AsciiComments:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-comments'
   Enabled: false
 
-Style/AsciiIdentifiers:
+Naming/AsciiIdentifiers:
   Description: 'Use only ascii symbols in identifiers.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-identifiers'
   Enabled: false
@@ -48,7 +48,7 @@ Style/CharacterLiteral:
 
 Style/ClassAndModuleChildren:
   Description: 'Checks style of children classes and modules.'
-  Enabled: true
+  Enabled: false
   EnforcedStyle: nested
 
 Metrics/ClassLength:
@@ -105,7 +105,7 @@ Rails/Delegate:
   Description: 'Prefer delegate method for delegations.'
   Enabled: false
 
-Style/DeprecatedHashMethods:
+Style/PreferredHashMethods:
   Description: 'Checks for use of deprecated Hash methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#hash-key'
   Enabled: false
@@ -114,7 +114,7 @@ Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false
 
-Style/DotPosition:
+Layout/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
   EnforcedStyle: trailing
@@ -144,11 +144,22 @@ Style/EvenOdd:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#predicate-methods'
   Enabled: false
 
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Description: 'Do not use unnecessary spacing.'
   Enabled: true
 
-Style/FileName:
+Layout/EmptyLinesAroundClassBody:
+  Description: 'Do not allow extra lines around class body.'
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Description: 'Do not allow extra lines around module body.'
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Naming/FileName:
   Description: 'Use snake_case for source file names.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
   Enabled: false
@@ -228,7 +239,7 @@ Style/ModuleFunction:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#module-function'
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Description: >-
                  Checks indentation of binary operations that span more than
                  one line.
@@ -240,7 +251,7 @@ Style/MultilineBlockChain:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#single-line-blocks'
   Enabled: false
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Description: >-
                  Checks indentation of method calls with the dot operator
                  that span more than one line.
@@ -298,7 +309,7 @@ Style/OneLineConditional:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#ternary-operator'
   Enabled: false
 
-Style/OpMethod:
+Naming/BinaryOperatorParameterName:
   Description: 'When defining binary operators, name the argument other.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#other-arg'
   Enabled: false
@@ -318,7 +329,7 @@ Style/PerlBackrefs:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-perl-regexp-last-matchers'
   Enabled: false
 
-Style/PredicateName:
+Naming/PredicateName:
   Description: 'Check the names of predicate methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
   NamePrefixBlacklist:
@@ -378,20 +389,12 @@ Style/TrailingCommaInArguments:
   Description: 'Checks for trailing comma in argument lists.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   EnforcedStyleForMultiline: comma
-  SupportedStyles:
-    - comma
-    - consistent_comma
-    - no_comma
   Enabled: true
 
 Style/TrailingCommaInLiteral:
   Description: 'Checks for trailing comma in array and hash literals.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-array-commas'
   EnforcedStyleForMultiline: comma
-  SupportedStyles:
-    - comma
-    - consistent_comma
-    - no_comma
   Enabled: true
 
 Style/TrivialAccessors:
@@ -479,19 +482,9 @@ Lint/HandleExceptions:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
   Enabled: false
 
-Lint/InvalidCharacterLiteral:
-  Description: >-
-                 Checks for invalid character literals with a non-escaped
-                 whitespace character.
-  Enabled: false
-
-Style/InitialIndentation:
+Layout/InitialIndentation:
   Description: >-
     Checks the indentation of the first non-blank non-comment line in a file.
-  Enabled: false
-
-Lint/LiteralInCondition:
-  Description: 'Checks of literals used in conditions.'
   Enabled: false
 
 Lint/LiteralInInterpolation:
@@ -597,11 +590,6 @@ Performance/StringReplacement:
                   number of characters. Use `delete` instead of `gsub` when
                   you are deleting characters.
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#stringgsub-vs-stringtr-code'
-  Enabled: false
-
-Style/SafeNavigation:
-  Description: 'This cop transforms usages of a method call safeguarded by a non `nil` check for the variable whose method is being called to safe navigation (`&.`).'
-  StyleGuide: 'http://www.rubydoc.info/gems/rubocop/0.43.0/RuboCop/Cop/Style/SafeNavigation'
   Enabled: false
 
 # Rails
