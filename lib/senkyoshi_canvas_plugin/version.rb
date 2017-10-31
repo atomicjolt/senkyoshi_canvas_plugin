@@ -14,5 +14,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 module SenkyoshiCanvasPlugin
-  VERSION = "1.0.8".freeze
+  VERSION = "1.0.11".freeze
 end
